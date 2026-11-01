@@ -1,0 +1,352 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>IoT คืออะไร? | เชื่อมต่อโลกอัจฉริยะ</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#073d72;--blue:#0878e8;--sky:#e4f5ff;--line:#b8e4ff;--ink:#0a315e;--green:#21a164;--purple:#8e42d3;--orange:#f3a018;--teal:#078e8d;--red:#e63b42;--paper:#f8fcff}
+*{box-sizing:border-box}
+html,body{margin:0;width:100%;height:100%;font-family:"Prompt",sans-serif;color:var(--ink);background:#e9f2f9}
+body{display:grid;place-items:center;overflow:hidden}
+.slide{width:min(100vw,177.7778vh);aspect-ratio:16/9;position:relative;overflow:hidden;background:radial-gradient(ellipse at 65% 38%,#fff 0,#f8fcff 63%,#edf8ff 100%);padding:1.2% 1.2% 0;display:grid;grid-template-rows:15.5% 75% 6.5%;gap:1%;container-type:inline-size;box-shadow:0 14px 50px #082f5326}
+header{display:grid;grid-template-columns:31% 35% 32%;align-items:center;gap:1%;min-height:0}
+.brand{display:flex;align-items:center;white-space:nowrap}.iot{font-family:"Prompt",sans-serif;font-size:7.7cqw;line-height:.8;font-weight:900;letter-spacing:-.055em;color:#137ee3}.brand-title{margin-left:1.5%;border-left:1px solid #416892;padding-left:2%;font-size:2.95cqw;font-weight:800;line-height:1.05;color:#092f5d}.brand-title small{display:block;font-size:1.38cqw;font-weight:500;margin-top:3%}
+.definition{border-left:2px solid #7493b5;padding-left:3%;font-size:1.44cqw;line-height:1.56;color:#0b315d}
+.quote{height:82%;border-radius:1.8cqw;background:linear-gradient(100deg,#e5f5ff,#dff1ff);display:flex;align-items:center;justify-content:space-evenly;padding:2%;font-size:1.4cqw;line-height:1.42;font-weight:700;color:#07539c}.globe{width:16%;aspect-ratio:1;border:3px solid #22b6e9;border-radius:50%;display:grid;place-items:center;color:#1eb8ec;font-size:3.2cqw;position:relative}.globe:before,.globe:after{content:"";position:absolute;border:1.5px solid #20b6e8;border-radius:50%;width:44%;height:100%}.globe:after{width:100%;height:42%}
+.workspace{display:grid;grid-template-columns:73.5% 25.5%;gap:1%;min-height:0}.left-stack{display:grid;grid-template-rows:62% 31%;gap:2%;min-height:0}.panel{position:relative;border:1.4px solid var(--line);border-radius:1.15cqw;background:#ffffffad;min-height:0}.process-panel{padding:4.1% 1.1% 1.2%}.panel-title{position:absolute;left:0;top:-1.1cqw;margin:0;padding:.42% 2.2%;border-radius:0 0 1.4cqw 0;background:linear-gradient(100deg,#0b4683,#09447e);color:#fff;font-size:1.65cqw;line-height:1.5;font-weight:800;white-space:nowrap}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);height:100%;min-height:0}.step{padding:1.2% 4%;position:relative;border-right:1px dashed #c4e5f7;min-width:0}.step:last-child{border:0}.step-head{display:flex;align-items:center;gap:3%;margin-bottom:1%}.number{width:3.2cqw;height:3.2cqw;flex:0 0 3.2cqw;border-radius:50%;display:grid;place-items:center;color:#fff;font-size:1.8cqw;font-weight:800;background:var(--blue)}.step:nth-child(2) .number{background:var(--green)}.step:nth-child(3) .number{background:var(--purple)}.step:nth-child(4) .number{background:var(--orange)}.step h2{font-size:1.33cqw;line-height:1.28;margin:0;color:var(--blue);white-space:nowrap}.step:nth-child(2) h2{color:var(--green)}.step:nth-child(3) h2{color:var(--purple)}.step:nth-child(4) h2{color:var(--orange)}.step p{font-size:.98cqw;line-height:1.5;margin:.3em 0 .6em;min-height:4.1em}.visual{border-radius:1.25cqw;background:linear-gradient(140deg,#e6f7ff,#d9effa);display:flex;flex-direction:column;align-items:center;justify-content:flex-start;text-align:center;color:#0d5a9e;overflow:hidden;padding:3% 4%;height:59%}.visual img{display:block;max-width:100%;object-fit:contain}.sensor-img{width:96%;height:50%;margin:2% 0 3%}.visual-label{font-size:1.08cqw;font-weight:800;align-self:flex-start;margin:0 0 2%}.sensor-list{margin:0;padding-left:1.1em;display:grid;grid-template-columns:1fr 1fr;gap:.3em;font-size:.92cqw;font-weight:400;text-align:left;width:100%}.board-visual{background:none;height:65%;justify-content:center}.board-visual img{width:100%;height:70%}.board-visual .visual-label{display:block;align-self:center;text-align:center;color:#123b69;font-size:1.18cqw;margin-top:2%}.cloud-visual{background:none;padding:0;height:34%;justify-content:center}.cloud-visual img{width:83%;height:75%}.cloud-visual .visual-label{align-self:center;text-align:center;color:#12569c;font-size:1.02cqw}.network{display:flex;justify-content:space-around;align-items:flex-start;margin-top:3%;width:100%;font-size:.85cqw;white-space:nowrap}.network span{text-align:center}.network b{display:block;font-size:2.3cqw;line-height:1.1;color:#084a8c}.flow-arrow{position:absolute;right:-.18em;top:44%;font-size:2.35cqw;color:#117de6;z-index:2}
+.phone-step{padding-right:2%}.phone-step p{min-height:3.7em}.phone-art{position:absolute;bottom:-1.2%;left:4%;width:94%;height:67%;object-fit:contain;object-position:center bottom}
+.examples{height:88%;margin-top:3.6%;padding:4.5% 1.2% 1.2%;display:flex;flex-direction:column;gap:1.5%}.examples .panel-title{top:-1.1cqw}.example{display:grid;grid-template-columns:47% 53%;align-items:center;gap:2.5%;flex:1;min-height:0;background:linear-gradient(115deg,#eaf7ff,#f4fafe);border-radius:.9cqw;padding:2.1%}.example img{display:block;width:100%;height:100%;min-height:0;object-fit:cover;border-radius:.8cqw}.example h3{margin:0 0 2%;font-size:1.28cqw;line-height:1.25;white-space:nowrap}.example ul{margin:0;padding-left:1.1em;font-size:.91cqw;line-height:1.6}
+.lower{display:grid;grid-template-columns:60.5% 20.5% 17.5%;gap:.75%;min-height:0}.lower-card{border-radius:1.05cqw;padding:5.4% 2.1% 1.5%;position:relative;min-height:0;background:#e4f7f3}.lower-card h2{position:absolute;top:0;left:0;margin:0;padding:.35% 2%;font-size:1.35cqw;line-height:1.4;color:#fff;background:linear-gradient(100deg,#078586,#009795);border-radius:0 0 1.1cqw 0;white-space:nowrap}.system-flow{height:100%;display:flex;align-items:center;justify-content:space-between;gap:.8%;padding-top:1%}.node{flex:1;min-width:0;text-align:center;font-size:.8cqw;line-height:1.25}.node img{display:block;width:100%;height:4.9cqw;object-fit:contain;margin:0 auto 2%}.node b{display:block;font-size:.92cqw;margin:1.5% 0}.node small{font-size:.72cqw;color:#27617f;white-space:nowrap}.mini-arrow{color:#43c6ee;font-size:1.65cqw;font-weight:bold}.benefits{background:linear-gradient(140deg,#e1f4ff,#e8f5ff);padding:2.2% 2.2% 1.5%}.benefits h2,.limits h2{position:static;background:none;color:#07559d;font-size:1.35cqw;padding:0;margin:0 0 5%}.limits{background:linear-gradient(140deg,#fff0f1,#ffeaec);padding:2.2% 2.2% 1.5%}.limits h2{color:#d72636}.points{margin:0;padding:0;list-style:none;display:grid;gap:3.8%;font-size:.85cqw;line-height:1.28}.points li{display:flex;align-items:center;gap:3%;white-space:nowrap}.check,.warning{width:1.2cqw;height:1.2cqw;flex:0 0 1.2cqw;border-radius:50%;display:grid;place-items:center;color:white;font-size:.78cqw;font-weight:900;background:#28a565}.warning{background:#e63740}
+footer{margin:0 -1.2vw;background:linear-gradient(100deg,#052f5d,#083e76);color:#fff;display:flex;align-items:center;justify-content:center;text-align:center;font-weight:700;font-size:1.28cqw;position:relative;padding:0 8%}footer:after{content:"";position:absolute;right:0;top:0;width:12%;height:100%;border-top:2px solid #078fe6;opacity:.85;clip-path:polygon(0 100%,24% 48%,53% 48%,69% 0,100% 0,100% 100%)}
+.export-pdf{position:fixed;z-index:10;top:16px;right:16px;border:0;border-radius:10px;padding:11px 16px;background:#0b64b5;color:#fff;font:700 14px "Prompt",sans-serif;box-shadow:0 4px 16px #092f5d33;cursor:pointer}.export-pdf:hover{background:#084b8a}.export-pdf:focus-visible{outline:3px solid #69c8ff;outline-offset:3px}
+@media(max-aspect-ratio:16/9){.slide{width:100vw}}
+@media print{@page{size:16in 9in;margin:0}html,body{width:16in;height:9in;background:white}.slide{width:16in;height:9in;box-shadow:none;print-color-adjust:exact;-webkit-print-color-adjust:exact}.export-pdf{display:none}}
+</style>
+<link rel="stylesheet" href="slides.css">
+
+<style>
+.poster3{grid-template-rows:16% 76% 5%;gap:1.1%}
+.p3-head{position:relative;display:block;overflow:hidden;background:linear-gradient(100deg,#eaf8ff,#fff 55%,#dff2ff);border:0;border-radius:0;padding:0}
+.p3-head:before{content:"";position:absolute;left:3%;top:2%;width:51%;height:84%;border-radius:2cqw;background:linear-gradient(110deg,#03285f,#063d86 85%,#087bd3);clip-path:polygon(12% 0,100% 0,90% 100%,0 100%);box-shadow:0 .3cqw .9cqw #05285c55;z-index:1}
+.p3-head>div{position:absolute;z-index:3;left:7%;top:5%;width:49%;height:90%}
+.p3-head h1{font-size:4.1cqw;line-height:1.05;margin:0;color:#fff;white-space:nowrap}
+.p3-head h1 em{color:#ffd32f}
+.p3-head p{position:absolute;left:9%;bottom:0;margin:0;font-size:1.45cqw;color:#092e61;background:#f5fbff;border-radius:2cqw;padding:.55% 2.5%;width:max-content;box-shadow:0 .15cqw .4cqw #092f5333}
+.p3-header-art{position:absolute;right:0;top:0;width:52%;height:100%;object-fit:cover;object-position:right center;z-index:0;pointer-events:none}
+.p3-layout{display:block;position:relative;min-height:0;height:100%}
+.p3-box{padding:2.1%;border-radius:2cqw;box-shadow:0 .25cqw .55cqw #14609725}
+.p3-sensor{left:1%;top:2%;width:37%;height:36%;border-color:#71caff;border-radius:2.5cqw 0 2.5cqw 2.5cqw}
+.p3-mcu{left:47%;top:2%;width:38%;height:37%;border-color:#50c9b4;border-radius:2.5cqw 2.5cqw 2.5cqw 0;background:linear-gradient(135deg,#f5fff7,#e5ffed)}
+.p3-comm{left:1%;top:42%;width:43%;height:38%;border-color:#b695ff;border-radius:2.5cqw 0 2.5cqw 2.5cqw;background:linear-gradient(130deg,#f4edff,#fff)}
+.p3-actuator{left:47%;top:42%;width:38%;height:38%;border-color:#ffad35;border-radius:0 2.5cqw 2.5cqw 2.5cqw;background:linear-gradient(130deg,#fff3e6,#fff)}
+.p3-box h2{font-size:1.5cqw;line-height:1.12;padding:1.2% 4%;margin:0 0 1.2%;border-radius:2cqw}
+.p3-sensor h2{background:linear-gradient(90deg,#079fe1,#0060a8)}.p3-mcu h2{background:linear-gradient(90deg,#16a75e,#087635)}.p3-comm h2{background:linear-gradient(90deg,#7134c8,#4b178f)}.p3-actuator h2{background:linear-gradient(90deg,#ff8d12,#e96700)}
+.p3-box p,.p3-box li{font-size:1.02cqw;line-height:1.28}.p3-box p{margin:.4em 0 .7em}.p3-box ul{margin:.35em 0;padding-left:1.05em}
+.p3-sensor p,.p3-sensor ul,.p3-sensor>b{max-width:49%}.p3-sensor img{right:2%;bottom:8%;width:42%;height:65%}
+.p3-mcu p,.p3-mcu ul,.p3-mcu>b{max-width:48%}.p3-mcu img{right:2%;bottom:3%;width:50%;height:72%}
+.p3-comm p,.p3-comm>b{max-width:50%}.p3-comm img{right:2%;bottom:1%;width:53%;height:68%}
+.p3-actuator p,.p3-actuator ul,.p3-actuator>b{max-width:47%}.p3-actuator img{right:2%;bottom:1%;width:52%;height:70%}
+.p3-popular{left:85%;top:2%;width:14%;height:96%;padding:1.2%;display:grid;grid-template-rows:9% repeat(4,1fr);gap:.8%;border:2px solid #0969bd;border-radius:1.8cqw;background:linear-gradient(180deg,#064ba0,#053674);box-shadow:0 .3cqw .7cqw #07366944}
+.p3-popular h2{position:relative;left:auto;top:auto;grid-row:1;width:100%;display:flex;align-items:center;justify-content:center;background:transparent;font-size:1.2cqw;line-height:1.1;padding:0;color:#fff}
+.p3-pop{border:1px solid #bedfff;border-radius:1.1cqw;background:linear-gradient(#fff,#edf7ff);padding:3%;font-size:.95cqw;line-height:1.15}
+.p3-pop img{height:61%;max-width:94%;object-fit:contain}
+.p3-core{left:36.2%;top:13.5%;width:15.2%;height:30%;z-index:5}
+.p3-core img{width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 0 .8cqw #0e9fff88)}
+.p3-cloud{left:3%;top:82%;width:71%;height:17%;border-radius:2cqw;background:linear-gradient(100deg,#d8fff3,#d7f6ff);border-color:#10b7b5;padding:1.5% 2%}
+.p3-cloud h2{width:max-content;max-width:75%;background:linear-gradient(90deg,#058b7e,#00735e);font-size:1.5cqw;padding:.8% 3%;margin:0 0 .4%}
+.p3-cloud p{font-size:1cqw;line-height:1.2;margin:.3em 0}.p3-cloud b{font-size:.92cqw}
+.p3-cloud img{right:1%;bottom:4%;width:28%;height:86%;object-fit:contain}
+.export-pdf{top:auto;bottom:3px;right:8px;padding:3px 8px;font-size:10px;box-shadow:none}
+@media print{.export-pdf{display:none}}
+
+.p3-core img{border-radius:50%;clip-path:circle(49% at 50% 50%)}
+.p3-mcu h2,.p3-mcu p,.p3-mcu>b,.p3-mcu ul{position:relative;left:5%;z-index:6}
+.p3-actuator h2{position:relative;left:4%;z-index:6}
+.p3-popular{grid-template-rows:9% repeat(4,minmax(0,1fr))}
+.p3-pop{min-height:0}
+.p3-cloud{top:83%;height:17%}
+.p3-cloud p{font-size:.9cqw;line-height:1.1;margin:.2em 0}
+.p3-cloud b{font-size:.8cqw}
+
+
+.p3-box{overflow:visible}
+.p3-box h2{position:absolute;top:-8%;left:4%;z-index:6;margin:0}
+.p3-sensor h2,.p3-mcu h2{top:-9%}
+.p3-comm h2,.p3-actuator h2{top:-2%}
+.p3-cloud h2{position:relative;top:auto;left:auto;z-index:2}
+.p3-mcu{padding-top:2.7%}
+.p3-comm,.p3-actuator{padding-top:4.5%}
+
+
+.p3-box h2{display:flex;align-items:center;gap:.55cqw;padding:.35% 1.5% .35% 0;min-height:4.2cqw}
+.p3-icon{width:4.25cqw;height:4.25cqw;flex:0 0 4.25cqw;border:2px solid #fff;border-radius:50%;display:grid;place-items:center;background:linear-gradient(145deg,#17caff,#0671cc);box-shadow:0 .15cqw .4cqw #00355c55;margin-left:-1.4cqw}
+.p3-icon svg{width:63%;height:63%;fill:none;stroke:#fff;stroke-width:3.4;stroke-linecap:round;stroke-linejoin:round}
+.p3-mcu h2 .p3-icon{background:linear-gradient(145deg,#33ca77,#087b3b)}
+.p3-comm h2 .p3-icon{background:linear-gradient(145deg,#bd73ff,#5d21ae)}
+.p3-actuator h2 .p3-icon{background:linear-gradient(145deg,#ffb43b,#e86b00)}
+.p3-mcu h2,.p3-mcu p,.p3-mcu>b,.p3-mcu ul{left:7%}
+.p3-sensor h2{left:4%}
+.p3-comm h2{left:4%}
+.p3-actuator h2{left:4%}
+
+
+.p3-sensor h2,.p3-mcu h2{top:-14%}
+.p3-cloud{padding:.3% 2% 1.5%}
+.p3-cloud h2{display:block;min-height:0;height:auto;line-height:1.1;padding:.5% 3%}
+
+
+.p3-sensor-visual,.p3-mcu-visual,.p3-actuator-visual{position:absolute;display:flex;align-items:center;justify-content:center;gap:2%;overflow:hidden}
+.p3-sensor-visual{right:2%;bottom:5%;width:45%;height:62%}
+.p3-sensor-visual img{position:static!important;right:auto!important;bottom:auto!important;width:31%;height:100%;object-fit:contain}
+.p3-mcu-visual{right:2%;bottom:5%;width:45%;height:70%;gap:1%}
+.p3-mcu-visual img{position:static!important;right:auto!important;bottom:auto!important;width:49%;height:100%;object-fit:contain}
+.p3-actuator-visual{right:2%;bottom:4%;width:48%;height:68%;gap:0}
+.p3-actuator-visual img:first-child{position:static!important;right:auto!important;bottom:auto!important;width:64%;height:100%;object-fit:contain}
+.p3-actuator-visual img:last-child{position:static!important;right:auto!important;bottom:auto!important;width:34%;height:58%;object-fit:contain}
+.p3-comm>img{right:3%;bottom:2%;width:47%;height:65%;object-fit:contain}
+.p3-actuator p,.p3-actuator>b,.p3-actuator ul{max-width:38%}
+.p3-box p,.p3-box li{font-size:1.05cqw;line-height:1.25}
+.p3-box>b{font-size:1.02cqw}
+.p3-mcu h2,.p3-mcu p,.p3-mcu>b,.p3-mcu ul{left:7.5%}
+
+
+/* Clean image areas and consistent text hierarchy */
+.p3-sensor-visual{position:absolute;right:1.5%;bottom:3%;width:47%;height:68%;object-fit:contain;clip-path:inset(0 4% 0 0);}
+.p3-sensor-visual img{display:none!important}
+.p3-mcu-visual{position:absolute;right:1.5%;bottom:2%;width:44%;height:78%;display:block;overflow:visible}
+.p3-mcu-visual img:first-child{position:absolute!important;left:0;top:0;right:auto!important;bottom:auto!important;width:100%;height:62%;object-fit:contain}
+.p3-mcu-visual img:last-child{position:absolute!important;right:0;bottom:0;left:auto;top:auto;width:78%;height:48%;object-fit:contain}
+.p3-actuator-visual{position:absolute!important;right:1.5%!important;bottom:2%!important;width:48%!important;height:78%!important;object-fit:contain;clip-path:polygon(23% 0,100% 0,100% 100%,0 100%,0 14%)}
+.p3-comm>img{right:2%!important;bottom:2%!important;width:45%!important;height:65%!important;clip-path:inset(8% 6% 0 0)}
+.p3-box h2{font-size:1.48cqw}
+.p3-box p,.p3-box li{font-size:1.08cqw;line-height:1.27}
+.p3-box>b{display:block;max-width:43%;font-size:1.05cqw;line-height:1.25}
+.p3-sensor p,.p3-sensor ul{max-width:47%}
+.p3-mcu p,.p3-mcu ul,.p3-mcu>b{max-width:43%}
+.p3-comm p{max-width:43%}.p3-comm>b{max-width:43%}
+.p3-actuator p,.p3-actuator>b,.p3-actuator ul{max-width:38%}
+.p3-example-list{display:grid;grid-template-columns:repeat(2,max-content);gap:.15em 1.4em;list-style:none;padding:0!important;margin:.25em 0!important}
+.p3-example-list li:before{content:"●";margin-right:.45em;color:#1687d8}
+.p3-comm .p3-example-list li:before{color:#8e42d3}.p3-actuator .p3-example-list li:before{color:#f28a0c}
+.p3-cloud p{font-size:.98cqw;max-width:68%}.p3-cloud b{font-size:.92cqw}
+
+
+/* Final non-overlapping page 3 layout */
+.poster3{grid-template-rows:16% 76% 5%;gap:.8%}
+.p3-head{z-index:3}
+.p3-layout{position:relative;height:100%;min-height:0}
+.p3-box{position:absolute;box-sizing:border-box;padding:4.3% 2.6% 2%;overflow:visible}
+.p3-sensor{left:1%;top:3%;width:40%;height:36%;border-radius:2.3cqw 0 2.3cqw 2.3cqw}
+.p3-mcu{left:55%;top:3%;width:29%;height:36%;border-radius:2.3cqw 2.3cqw 2.3cqw 0}
+.p3-comm{left:1%;top:43%;width:43%;height:37%;border-radius:2.3cqw 0 2.3cqw 2.3cqw}
+.p3-actuator{left:55%;top:43%;width:29%;height:37%;border-radius:0 2.3cqw 2.3cqw 2.3cqw}
+.p3-box h2{position:absolute;left:4%;top:-7%;display:flex;align-items:center;gap:.5cqw;width:max-content;max-width:96%;min-height:3.9cqw;padding:.25% 1.5% .25% 0;margin:0;font-size:1.38cqw;line-height:1.1;white-space:normal}
+.p3-sensor h2,.p3-mcu h2{top:-7%}.p3-comm h2,.p3-actuator h2{top:-6%}
+.p3-icon{width:3.9cqw;height:3.9cqw;flex:0 0 3.9cqw;margin-left:-1.3cqw}
+.p3-box p,.p3-box li,.p3-box>b{font-size:1.03cqw;line-height:1.28}
+.p3-box p{margin:.35em 0 .65em}
+.p3-box>b{display:block;margin:.35em 0 .2em}
+.p3-sensor p,.p3-sensor ul,.p3-sensor>b{max-width:48%}
+.p3-mcu p,.p3-mcu ul,.p3-mcu>b{max-width:42%}
+.p3-comm p,.p3-comm ul,.p3-comm>b{max-width:43%}
+.p3-actuator p,.p3-actuator ul,.p3-actuator>b{max-width:42%}
+.p3-box ul{margin:.25em 0;padding-left:1.05em}
+.p3-sensor-visual{position:absolute!important;right:1.5%!important;bottom:4%!important;width:46%!important;height:65%!important;clip-path:none!important;object-fit:contain}
+.p3-mcu-visual{position:absolute!important;right:1.5%!important;bottom:3%!important;width:47%!important;height:78%!important;display:block!important;overflow:visible!important}
+.p3-mcu-visual img:first-child{position:absolute!important;left:0!important;top:0!important;right:auto!important;bottom:auto!important;width:100%!important;height:53%!important;object-fit:contain}
+.p3-mcu-visual img:last-child{position:absolute!important;right:0!important;bottom:0!important;left:auto!important;top:auto!important;width:80%!important;height:44%!important;object-fit:contain}
+.p3-comm>img{position:absolute!important;right:2%!important;bottom:3%!important;width:45%!important;height:65%!important;object-fit:contain;clip-path:none!important}
+.p3-actuator-visual{position:absolute!important;right:1.5%!important;bottom:3%!important;width:46%!important;height:72%!important;clip-path:none!important;object-fit:contain}
+.p3-example-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));max-width:42%;gap:.12em .75em;list-style:none;padding:0!important;margin:.2em 0!important}
+.p3-example-list li{white-space:nowrap}
+.p3-cloud{left:3%;top:82%;width:71%;height:17%;padding:.7% 2% 1.2%;overflow:hidden}
+.p3-cloud h2{position:relative;left:auto;top:auto;width:max-content;max-width:68%;min-height:0;height:auto;display:block;padding:.5% 2%;margin:0 0 .35em;font-size:1.42cqw}
+.p3-cloud p{max-width:67%;font-size:.96cqw;line-height:1.2;margin:.2em 0}
+.p3-cloud>b{font-size:.9cqw}
+.p3-cloud img{position:absolute;right:1%;bottom:4%;width:28%;height:84%;object-fit:contain}
+.p3-popular{left:85%;top:2%;width:14%;height:96%;grid-template-rows:9% repeat(4,minmax(0,1fr));padding:1.2%;overflow:hidden}
+.p3-popular h2{font-size:1.08cqw}
+.p3-pop{min-height:0;font-size:.9cqw}
+.p3-pop img{position:static!important;width:90%;height:58%;object-fit:contain}
+
+
+/* Keep the central mark fully inside the clear inter-card gutter. */
+.p3-core{left:42.4%;top:12%;width:12%;height:26%;z-index:5}
+.p3-core img{width:100%;height:100%;object-fit:contain;border-radius:50%;clip-path:circle(49% at 50% 50%)}
+
+
+.p3-mcu,.p3-actuator{left:54%;width:30%}
+.p3-mcu p,.p3-mcu ul,.p3-mcu>b{max-width:50%}
+.p3-mcu-visual{width:43%!important}
+.p3-actuator p,.p3-actuator>b,.p3-actuator ul{max-width:48%}
+.p3-actuator-visual{width:42%!important}
+.p3-core{left:42.2%;top:12%;width:11.6%;height:26%}
+
+
+.p3-box{padding-top:3.8%}
+.p3-box p,.p3-box li{line-height:1.22}
+.p3-box ul{margin:.18em 0 0}
+
+
+.p3-box{padding-top:3.2%}
+.p3-box p,.p3-box li,.p3-box>b{font-size:1.1cqw;line-height:1.16}
+.p3-cloud p{font-size:.98cqw}
+
+
+.p3-cloud{padding:.8% 2% 1% !important}
+.p3-comm>img{right:5%!important;width:40%!important}
+
+
+</style>
+</head>
+<body>
+<article class="slide active" aria-label="สไลด์อินโฟกราฟิก IoT ขนาด 16 ต่อ 9">
+  <header>
+    <div class="brand"><div class="iot">IoT</div><div class="brand-title">คืออะไร?<small>(Internet of Things)</small></div></div>
+    <div class="definition">IoT คือ การเชื่อมต่ออุปกรณ์ต่าง ๆ เข้ากับอินเทอร์เน็ต<br>หรือเครือข่าย เพื่อรับส่งข้อมูล ตรวจสอบสถานะ<br>และสั่งงานได้โดยอัตโนมัติหรือจากระยะไกล</div>
+    <div class="quote"><span class="globe">✥</span><span>“อุปกรณ์ต่าง ๆ สามารถ<br>สื่อสารกันได้ ผ่านอินเทอร์เน็ต<br>เพื่อให้ชีวิตและการทำงานง่ายขึ้น”</span></div>
+  </header>
+  <main class="workspace">
+    <div class="left-stack">
+      <section class="panel process-panel"><h1 class="panel-title">หลักการทำงานของ IoT</h1><div class="steps">
+        <section class="step"><div class="step-head"><span class="number">1</span><h2>เก็บข้อมูลจากอุปกรณ์</h2></div><p>เซนเซอร์ตรวจจับข้อมูลจากสภาพแวดล้อมหรือเครื่องจักร</p><div class="visual"><img class="sensor-img" src="assets/sensors.png" alt="ตัวอย่างเซนเซอร์อุณหภูมิ ความชื้น และการเคลื่อนไหว"><div class="visual-label">ตัวอย่างเซนเซอร์</div><ul class="sensor-list"><li>วัดอุณหภูมิ</li><li>วัดความชื้น</li><li>ตรวจจับการเคลื่อนไหว</li><li>ฯลฯ</li></ul></div><span class="flow-arrow">➜</span></section>
+        <section class="step"><div class="step-head"><span class="number">2</span><h2>ประมวลผลข้อมูล</h2></div><p>ไมโครคอนโทรลเลอร์รับข้อมูลจากเซนเซอร์ และประมวลผลตามเงื่อนไขที่ตั้งไว้</p><div class="visual board-visual"><img src="assets/esp32.png" alt="บอร์ดไมโครคอนโทรลเลอร์ ESP32"><div class="visual-label">ESP32<br><span style="font-weight:400">(ไมโครคอนโทรลเลอร์)</span></div></div><span class="flow-arrow">➜</span></section>
+        <section class="step"><div class="step-head"><span class="number">3</span><h2>ส่งข้อมูลผ่านเครือข่าย</h2></div><p>ส่งข้อมูลไปยังอินเทอร์เน็ตผ่าน Wi-Fi / 4G / 5G หรือเครือข่ายอื่น ๆ</p><div class="visual cloud-visual"><img src="assets/cloud.png" alt="สัญลักษณ์คลาวด์และการรับส่งข้อมูล"><div class="visual-label">อินเทอร์เน็ต / คลาวด์</div></div><div class="network"><span><b>◔</b>Wi-Fi</span><span><b>♧</b>4G/5G</span><span><b>◎</b>เครือข่ายอื่น ๆ</span></div><span class="flow-arrow">➜</span></section>
+        <section class="step phone-step"><div class="step-head"><span class="number">4</span><h2>แสดงผล / สั่งงาน</h2></div><p>ผู้ใช้สามารถดูข้อมูลผ่านแอปพลิเคชัน หรือสั่งงานอุปกรณ์จากระยะไกลได้</p><img class="phone-art" src="assets/phone-hand.png" alt="มือถือแสดงข้อมูล IoT Monitoring อยู่ในมือผู้ใช้"></section>
+      </div></section>
+      <section class="lower">
+        <section class="lower-card"><h2>ตัวอย่างระบบ : ปั๊มน้ำอัตโนมัติด้วย IoT</h2><div class="system-flow"><div class="node"><img src="assets/water-sensor.png" alt=""><b>เซนเซอร์ระดับน้ำ/ความชื้น</b><small>ตรวจจับค่าที่ต้องการ</small></div><span class="mini-arrow">➜</span><div class="node"><img src="assets/water-esp32.png" alt=""><b>ESP32</b><small>ประมวลผลข้อมูล</small></div><span class="mini-arrow">➜</span><div class="node"><img src="assets/water-relay.png" alt=""><b>รีเลย์</b><small>สั่งงานปั๊มน้ำ</small></div><span class="mini-arrow">➜</span><div class="node"><img src="assets/water-pump.png" alt=""><b>ปั๊มน้ำ</b><small>ทำงานอัตโนมัติ</small></div><span class="mini-arrow">➜</span><div class="node"><img src="assets/water-phone.png" alt=""><b>มือถือ</b><small>ดูสถานะ / รับการแจ้งเตือน</small></div></div></section>
+        <section class="lower-card benefits"><h2>👍 ประโยชน์ของ IoT</h2><ul class="points"><li><span class="check">✓</span>ลดงานที่ต้องทำด้วยมือ</li><li><span class="check">✓</span>เพิ่มความสะดวกและความปลอดภัย</li><li><span class="check">✓</span>ตรวจสอบข้อมูลได้รวดเร็วและแม่นยำ</li><li><span class="check">✓</span>ช่วยประหยัดพลังงานและลดต้นทุน</li></ul></section>
+        <section class="lower-card limits"><h2>⚠ ข้อจำกัดของ IoT</h2><ul class="points"><li><span class="warning">!</span>ค่าอุปกรณ์เริ่มต้นสูง</li><li><span class="warning">!</span>ความปลอดภัยทางไซเบอร์</li><li><span class="warning">!</span>ความเสถียรของเครือข่าย</li><li><span class="warning">!</span>ต้องการการดูแลและบำรุงรักษา</li></ul></section>
+      </section>
+    </div>
+    <section class="panel examples"><h2 class="panel-title">ตัวอย่างการใช้งาน IoT</h2>
+      <article class="example"><img src="assets/home.png" alt="บ้านอัจฉริยะและอุปกรณ์ควบคุม"><div><h3>บ้านอัจฉริยะ</h3><ul><li>ควบคุมไฟ แอร์ ผ่านมือถือ</li><li>ระบบความปลอดภัย</li></ul></div></article>
+      <article class="example"><img src="assets/factory.png" alt="เครื่องจักรและระบบติดตามในโรงงาน"><div><h3>โรงงานอุตสาหกรรม</h3><ul><li>ตรวจสอบสถานะเครื่องจักร</li><li>แจ้งเตือนความผิดปกติ</li><li>ประหยัดพลังงาน</li></ul></div></article>
+      <article class="example"><img src="assets/agriculture.png" alt="ระบบรดน้ำและเซนเซอร์ในแปลงเกษตร"><div><h3>การเกษตร</h3><ul><li>ระบบรดน้ำอัตโนมัติ</li><li>ตรวจวัดความชื้นดิน</li><li>ติดตามสภาพอากาศ</li></ul></div></article>
+      <article class="example"><img src="assets/everyday.png" alt="เมืองอัจฉริยะและอุปกรณ์เชื่อมต่อ"><div><h3>ชีวิตประจำวัน</h3><ul><li>ตรวจวัดคุณภาพอากาศ</li><li>ติดตามการใช้พลังงาน</li><li>อุปกรณ์สวมใส่อัจฉริยะ</li></ul></div></article>
+    </section>
+  </main>
+  <footer>IoT　ไม่ใช่แค่เทคโนโลยี แต่คือการเชื่อมต่อ “โลกของอุปกรณ์” ให้ทำงานร่วมกัน เพื่ออนาคตที่ดีกว่า</footer>
+</article>
+  <article class="slide poster poster2" aria-label="IoT ทำงานอย่างไร">
+    <header class="p2-head"><div><h1><span>IoT</span> ทำงานอย่างไร?</h1><p>“จากข้อมูลเล็ก ๆ สู่การสั่งงานอัจฉริยะ”</p></div><div class="p2-globe">◎ ☁</div></header>
+    <div class="p2-main"><div class="p2-steps">
+      <section class="p2-step"><h2><b>1</b> ตรวจจับข้อมูล<br>(Sense)</h2><p>เซนเซอร์ตรวจวัดสภาพจากสิ่งแวดล้อม เช่น อุณหภูมิ ความชื้น ฯลฯ</p><img src="assets/how-soil-sensor.png" alt="ต้นกล้าและเซนเซอร์วัดความชื้นในดิน"><span class="p2-tag">ตัวอย่าง : เซนเซอร์ความชื้นในดิน</span><span class="p2-arrow">➜</span></section>
+      <section class="p2-step"><h2><b>2</b> ประมวลผลข้อมูล<br>(Process)</h2><p>ไมโครคอนโทรลเลอร์ เช่น ESP32 รับข้อมูลและตรวจสอบเงื่อนไข</p><img src="assets/how-esp32.png" alt="บอร์ด ESP32"><span class="p2-tag">ตัวอย่าง : ESP32</span><span class="p2-arrow">➜</span></section>
+      <section class="p2-step"><h2><b>3</b> ส่งข้อมูลผ่านเครือข่าย<br>(Transmit)</h2><p>ส่งข้อมูลขึ้นอินเทอร์เน็ตผ่าน Wi-Fi หรือ 4G/5G</p><img src="assets/how-router.png" alt="เราเตอร์ Wi-Fi และ Cloud"><span class="p2-arrow">➜</span></section>
+      <section class="p2-step"><h2><b>4</b> แสดงผล / สั่งงาน<br>(Act)</h2><p>ผู้ใช้ดูข้อมูลผ่านมือถือ หรือสั่งให้อุปกรณ์ทำงาน</p><img class="p2-phone" src="assets/how-phone.png" alt="แอปตรวจวัด IoT บนมือถือ"><img class="p2-actuator" src="assets/how-pump.png" alt="ปั๊มน้ำที่สั่งงานผ่าน IoT"></section>
+    </div><div class="p2-bottom"><section class="p2-flow"><h2>💡 ตัวอย่างการทำงาน : ระบบปั๊มน้ำอัตโนมัติ</h2><div class="flow-node"><img src="assets/how-dry-soil.png" alt="ดินแห้งและเซนเซอร์"><b>ดินแห้ง</b><br>(ความชื้นต่ำ)</div><span>➜</span><div class="flow-node"><img src="assets/how-esp32.png" alt="ESP32"><b>ประมวลผลตามเงื่อนไข</b></div><span>➜</span><div class="flow-node"><img src="assets/how-pump.png" alt="ปั๊มน้ำ"><b>สั่งเปิดปั๊มน้ำ</b></div><span>➜</span><div class="flow-node"><img src="assets/how-wet-field.png" alt="แปลงพืชได้รับน้ำ"><b>ดินชุ่มชื้นตามกำหนด</b></div></section><aside class="p2-summary"><h2>✓ สรุป</h2>IoT ทำงานโดยการเชื่อมต่ออุปกรณ์ ตรวจจับข้อมูล → ประมวลผล → ส่งข้อมูล → สั่งงานอัตโนมัติ ช่วยให้ชีวิตสะดวกขึ้นและเพิ่มประสิทธิภาพมากขึ้น</aside></div></div>
+    <footer class="poster-foot">“IoT = เชื่อมต่ออุปกรณ์ ให้โลกของคุณฉลาดขึ้น”</footer>
+  </article>
+  <article class="slide poster poster3" aria-label="อุปกรณ์สำคัญของ IoT">
+    <header class="p3-head"><div><h1>อุปกรณ์สำคัญของ <em>IoT</em></h1><p>อุปกรณ์หลักที่ทำให้ IoT ทำงานได้อย่างสมบูรณ์</p></div><img class="p3-header-art" src="assets/equipment-header-tech.png" alt="เครือข่าย IoT และบ้านอัจฉริยะ"></header>
+    <div class="p3-layout">
+      <section class="p3-box p3-sensor"><h2><span class="p3-icon"><svg viewBox="0 0 64 64"><path d="M24 12a8 8 0 0 1 16 0v25a16 16 0 1 1-16 0z"/><path d="M32 20v27"/></svg></span>เซนเซอร์ (Sensor)</h2><p>ตรวจจับข้อมูลจากสภาพแวดล้อม เช่น อุณหภูมิ ความชื้น แสงสว่าง หรือการเคลื่อนไหว</p><b>ตัวอย่าง</b><ul><li>เซนเซอร์อุณหภูมิ (DHT11)</li><li>เซนเซอร์ความชื้นในดิน</li><li>เซนเซอร์ตรวจจับการเคลื่อนไหว</li></ul><img class="p3-sensor-visual" src="assets/sensors.png" alt="เซนเซอร์อุณหภูมิ ความชื้น และการเคลื่อนไหว"></section>
+      <section class="p3-box p3-mcu"><h2><span class="p3-icon"><svg viewBox="0 0 64 64"><rect x="18" y="18" width="28" height="28" rx="3"/><path d="M24 8v10m8-10v10m8-10v10m-16 28v10m8-10v10m8-10v10M8 24h10m-10 8h10m-10 8h10m28-16h10m-10 8h10m-10 8h10"/></svg></span>ไมโครคอนโทรลเลอร์ (Microcontroller)</h2><p>สมองกลของระบบ ทำหน้าที่ประมวลผลข้อมูลและสั่งงานอุปกรณ์</p><b>ตัวอย่าง</b><ul><li>ESP32 / ESP8266</li><li>Arduino Uno</li><li>Raspberry Pi</li></ul><div class="p3-mcu-visual"><img src="assets/equip-esp32.png" alt="ESP32"><img src="assets/mcu-arduino.png" alt="Arduino Uno"></div></section>
+      <section class="p3-box p3-comm"><h2><span class="p3-icon"><svg viewBox="0 0 64 64"><path d="M32 52V27m-13 25 13-25 13 25M10 19Q32 1 54 19M17 27Q32 14 47 27"/><circle cx="32" cy="16" r="4"/></svg></span>ระบบสื่อสาร (Communication)</h2><p>เชื่อมต่อข้อมูลผ่านเครือข่าย เช่น Wi-Fi, Bluetooth หรือเครือข่ายมือถือ</p><b>ตัวอย่าง</b><ul class="p3-example-list"><li>Wi-Fi</li><li>4G/5G</li><li>LoRa</li></ul><img src="assets/equipment-router-clean.png" alt="เราเตอร์ Wi-Fi"></section>
+      <section class="p3-box p3-actuator"><h2><span class="p3-icon"><svg viewBox="0 0 64 64"><path d="m32 8 5 3 6-1 3 5 6 3-1 6 4 5-4 5 1 6-6 3-3 5-6-1-5 3-5-3-6 1-3-5-6-3 1-6-4-5 4-5-1-6 6-3 3-5 6 1z"/><circle cx="32" cy="32" r="9"/></svg></span>อุปกรณ์สั่งงาน (Actuator)</h2><p>ทำงานตามคำสั่งจากระบบ เช่น เปิด–ปิดอุปกรณ์ หรือควบคุมการทำงาน</p><b>ตัวอย่าง</b><ul class="p3-example-list"><li>ปั๊มน้ำ</li><li>รีเลย์</li><li>มอเตอร์</li></ul><img class="p3-actuator-visual" src="assets/equipment-actuator-clean.png" alt="มอเตอร์ปั๊มน้ำและรีเลย์ควบคุม"></section>
+      <section class="p3-box p3-cloud"><h2>ระบบประมวลผลและคลาวด์ (Cloud &amp; Server)</h2><p>จัดเก็บข้อมูล วิเคราะห์ และแสดงผลผ่านแอปพลิเคชันหรือเว็บไซต์</p><b>ตัวอย่าง　Google Cloud　•　AWS　•　Microsoft Azure</b><img src="assets/equip-cloud-server.png" alt="ระบบคลาวด์และเซิร์ฟเวอร์"></section>
+      <aside class="p3-popular"><h2>⭐ ตัวอย่างอุปกรณ์ยอดนิยม</h2><div class="p3-pop"><img src="assets/equip-esp32.png" alt="บอร์ด ESP32">ESP32<br>(Wi-Fi + Bluetooth)</div><div class="p3-pop"><img src="assets/equip-pi.png" alt="Raspberry Pi">Raspberry Pi<br>(คอมพิวเตอร์ขนาดเล็ก)</div><div class="p3-pop"><img src="assets/sensor-temperature.png" alt="เซนเซอร์ DHT11">DHT11<br>(เซนเซอร์วัดอุณหภูมิ)</div><div class="p3-pop"><img src="assets/water-relay.png" alt="Relay Module">Relay Module<br>(สั่งงานอุปกรณ์ไฟฟ้า)</div></aside>
+      <div class="p3-core"><img src="assets/equip-iot-core.png" alt="สัญลักษณ์ IoT เชื่อมต่ออินเทอร์เน็ต"></div>
+    </div>
+    <footer class="poster-foot">อุปกรณ์เหล่านี้ทำงานร่วมกัน เพื่อให้ IoT เก็บข้อมูล สื่อสาร และสั่งงานได้อย่างอัจฉริยะ</footer>
+  </article>
+  <article class="slide poster poster4" aria-label="เซนเซอร์ IoT">
+    <header class="p4-head"><h1>เซนเซอร์ (Sensor)</h1><p>หัวใจสำคัญของ IoT ที่ช่วยให้เรารู้ข้อมูลจากโลกจริง</p></header>
+    <div class="p4-main"><section class="p4-types">
+      <article class="p4-sensor"><h2>เซนเซอร์อุณหภูมิ<br>(Temperature Sensor)</h2><img src="assets/sensor-temperature.png" alt="เซนเซอร์ DHT11"><p>วัดอุณหภูมิ<br>เช่น DHT11</p></article>
+      <article class="p4-sensor"><h2>เซนเซอร์ความชื้น<br>(Humidity Sensor)</h2><img src="assets/sensor-humidity.png" alt="เซนเซอร์ความชื้น"><p>วัดความชื้นในอากาศ<br>หรือดิน</p></article>
+      <article class="p4-sensor"><h2>เซนเซอร์ระดับน้ำ<br>(Water Level Sensor)</h2><img src="assets/sensor-water.png" alt="เซนเซอร์ระดับน้ำ"><p>ตรวจจับระดับน้ำ</p></article>
+      <article class="p4-sensor"><h2>เซนเซอร์ตรวจจับการเคลื่อนไหว<br>(Motion Sensor)</h2><img src="assets/sensor-motion.png" alt="เซนเซอร์ตรวจจับการเคลื่อนไหว"><p>ตรวจจับการเคลื่อนไหว<br>หรือการมีอยู่</p></article>
+      <article class="p4-sensor"><h2>เซนเซอร์แสง<br>(Light Sensor)</h2><img src="assets/sensor-light.png" alt="เซนเซอร์แสง"><p>วัดความสว่าง<br>ของแสง</p></article>
+      <article class="p4-sensor"><h2>เซนเซอร์ความดัน<br>(Pressure Sensor)</h2><img src="assets/sensor-pressure.png" alt="เซนเซอร์ความดัน"><p>วัดแรงดันของก๊าซ<br>หรือของเหลว</p></article>
+      <article class="p4-sensor"><h2>เซนเซอร์คุณภาพอากาศ<br>(Air Quality Sensor)</h2><img src="assets/sensor-air.png" alt="เซนเซอร์คุณภาพอากาศ"><p>ตรวจวัดมลพิษในอากาศ<br>เช่น PM2.5, CO₂</p></article>
+      <article class="p4-sensor"><h2>เซนเซอร์การสั่นสะเทือน<br>(Vibration Sensor)</h2><img src="assets/sensor-vibration.png" alt="เซนเซอร์การสั่นสะเทือน"><p>ตรวจจับการสั่นสะเทือน<br>หรือการกระแทก</p></article>
+    </section><section class="p4-examples"><h2>ตัวอย่างการใช้งานจริง</h2><article class="p4-example"><img src="assets/sensor-use-soil.png" alt="เซนเซอร์ในแปลงเกษตร"><b>วัดความชื้นในดิน<br>เพื่อรดน้ำอัตโนมัติ</b></article><article class="p4-example"><img src="assets/sensor-use-thermostat.png" alt="เทอร์โมสตัทอัจฉริยะ"><b>วัดอุณหภูมิในห้อง<br>ควบคุมแอร์อัตโนมัติ</b></article><article class="p4-example"><img src="assets/sensor-use-machine.png" alt="เซนเซอร์บนเครื่องจักร"><b>ตรวจจับการสั่นสะเทือน<br>เพื่อตรวจสอบเครื่องจักร</b></article><article class="p4-example"><img src="assets/sensor-use-air.png" alt="เครื่องวัดคุณภาพอากาศ"><b>ตรวจวัดคุณภาพอากาศ<br>แจ้งเตือนเมื่อมีมลพิษ</b></article></section></div>
+    <div class="p4-bottom"><div class="p4-summary"><strong>สรุป</strong><span>“เซนเซอร์ คือ ตัวรับรู้ข้อมูลจากสภาพแวดล้อม แล้วส่งข้อมูลให้ระบบประมวลผล เพื่อนำไปสั่งงานหรือแสดงผลในรูปแบบต่าง ๆ”</span></div><div class="p4-benefits"><span>🎯<br>ตรวจสอบได้<br>แบบ Real-Time</span><span>⚙<br>เพิ่มความแม่นยำ<br>และประสิทธิภาพ</span><span>🌿<br>ช่วยประหยัด<br>ทรัพยากร</span></div></div>
+    <footer class="poster-foot">ตัวอย่างเซนเซอร์ยอดนิยมและหน้าที่ในการตรวจวัด</footer>
+  </article>
+  <article class="slide poster poster5" aria-label="ไมโครคอนโทรลเลอร์">
+    <header class="p5-head"><div class="p5-chip-mark" aria-hidden="true"><svg viewBox="0 0 100 100"><rect x="25" y="25" width="50" height="50" rx="5"/><path d="M35 35h30v30H35zM10 32h15m-15 12h15m-15 12h15m-15 12h15m60-36h15m-15 12h15m-15 12h15m-15 12h15M32 10v15m12-15v15m12-15v15m12-15v15m-36 60V75m12 15V75m12 15V75m12 15V75"/></svg></div><h1>ไมโครคอนโทรลเลอร์<br><em>(Microcontroller)</em></h1><div class="p5-quote"><strong>“สมองของระบบ IoT”</strong><small>ขนาดเล็ก แต่ทรงพลัง ควบคุมได้หลากหลาย</small></div><div class="p5-brain" aria-hidden="true"><svg viewBox="0 0 100 100"><path d="M47 20c-8-11-25-6-26 6-12 2-15 17-7 24-7 10-1 23 10 24 3 13 17 17 27 8V25c0-3-1-4-4-5Zm6 0c8-11 25-6 26 6 12 2 15 17 7 24 7 10 1 23-10 24-3 13-17 17-27 8V25c0-3 1-4 4-5Z"/><path d="m22 31 23 9-25 12 24 16-17 7m51-44-23 9 25 12-24 16 17 7M50 23v54m-22-36 22 9 22-9m-27 21 5-12 5 12"/><g><circle cx="22" cy="31" r="2"/><circle cx="45" cy="40" r="2"/><circle cx="25" cy="52" r="2"/><circle cx="49" cy="61" r="2"/><circle cx="33" cy="75" r="2"/><circle cx="78" cy="31" r="2"/><circle cx="55" cy="40" r="2"/><circle cx="75" cy="52" r="2"/><circle cx="51" cy="61" r="2"/><circle cx="67" cy="75" r="2"/></g></svg></div></header>
+    <div class="p5-main"><div class="p5-top"><section class="p5-intro"><h2>คืออะไร?</h2><p>ไมโครคอนโทรลเลอร์ คือ อุปกรณ์อิเล็กทรอนิกส์ขนาดเล็ก ที่รวมเอาหน่วยประมวลผล (CPU), หน่วยความจำ และวงจรควบคุมต่าง ๆ ไว้ในชิปเดียว เพื่อใช้ในการควบคุมและประมวลผลข้อมูล</p><img src="assets/mcu-chip.png" alt="ชิปไมโครคอนโทรลเลอร์"></section><section class="p5-boards"><h2>ประเภทของ Microcontroller</h2><article class="p5-board"><img src="assets/mcu-arduino.png" alt="Arduino Uno"><b>Arduino Uno</b><p>ใช้งานง่าย<br>เหมาะกับผู้เริ่มต้น</p></article><article class="p5-board"><img src="assets/mcu-esp32.png" alt="ESP32"><b>ESP32</b><p>ประสิทธิภาพสูง<br>มี Wi-Fi และ Bluetooth</p></article><article class="p5-board"><img src="assets/mcu-esp8266.png" alt="ESP8266"><b>ESP8266</b><p>เชื่อมต่ออินเทอร์เน็ตได้</p></article><article class="p5-board"><img src="assets/mcu-pico.png" alt="Raspberry Pi Pico"><b>Raspberry Pi Pico</b><p>ขนาดเล็ก<br>ประสิทธิภาพดี</p></article></section></div>
+      <div class="p5-bottom"><section class="p5-connection"><h2>การต่อใช้งาน</h2><p>ไมโครคอนโทรลเลอร์สามารถต่อใช้งาน<br>ได้หลายรูปแบบ เช่น</p><img src="assets/mcu-uno-large.png" alt="บอร์ด Arduino Uno"><ul><li>ผ่าน USB<br>(เพื่อเขียนโปรแกรม<br>และจ่ายไฟ)</li><li>ผ่านแบตเตอรี่<br>(สำหรับงานพกพา)</li><li>ผ่านแหล่งจ่ายไฟ<br>(เช่น 5V หรือ 3.3V)</li></ul></section><section class="p5-apps"><h2>ประเภทการใช้งาน</h2><div class="p5-app"><b>⌂</b><span><strong>งานสมาร์ทโฮม</strong><small>(ควบคุมอุปกรณ์ในบ้าน)</small></span></div><div class="p5-app"><b>▥</b><span><strong>งานอุตสาหกรรม</strong><small>(ควบคุมเครื่องจักร)</small></span></div><div class="p5-app"><b>♥</b><span><strong>งานด้านการแพทย์</strong><small>(ติดตามสุขภาพ)</small></span></div><div class="p5-app"><b>♧</b><span><strong>งานเกษตรอัจฉริยะ</strong><small>(ควบคุมการให้น้ำ/ตรวจวัด)</small></span></div><div class="p5-app"><b>⌖</b><span><strong>งานยานยนต์</strong><small>(ระบบรถยนต์อัจฉริยะ)</small></span></div></section><section class="p5-process"><h2>หลักการประมวลผลและส่งข้อมูล</h2><div class="p5-flow"><article><b>1. รับข้อมูล<br>(Processing Input)</b><svg class="p5-process-icon chip-icon" viewBox="0 0 100 100" role="img" aria-label="ชิปประมวลผล"><rect x="28" y="28" width="44" height="44" rx="4"/><rect x="38" y="38" width="24" height="24"/><path d="M36 12v16m14-16v16m14-16v16m14-16v16M36 72v16m14-16v16m14-16v16m14-16v16M12 36h16m-16 14h16m-16 14h16m44-28h16M72 50h16M72 64h16"/></svg><span>รับข้อมูลจาก<br>ระบบหรือข้อมูล<br>ที่กำหนด</span></article><span>➜</span><article><b>2. ประมวลผล<br>(Processing)</b><svg class="p5-process-icon code-icon" viewBox="0 0 100 100" role="img" aria-label="ชุดคำสั่ง"><rect x="10" y="20" width="80" height="60" rx="8"/><path d="m39 38-13 12 13 12m22-24 13 12-13 12M57 33 45 67"/></svg><span>ทำงานตาม<br>โปรแกรมที่เขียนไว้</span></article><span>➜</span><article><b>3. ส่งข้อมูล<br>(Communication)</b><svg class="p5-process-icon wifi-icon" viewBox="0 0 100 100" role="img" aria-label="สัญลักษณ์ Wi-Fi"><path d="M12 38Q50 4 88 38M24 52Q50 29 76 52M36 66Q50 54 64 66"/><circle cx="50" cy="80" r="6"/></svg><span>ส่งข้อมูลผ่าน<br>Wi-Fi / Bluetooth<br>หรือสื่อสารอื่น ๆ</span></article></div><div class="p5-process-note">✓ เพื่อควบคุมอุปกรณ์ หรือส่งข้อมูลไปยังระบบ Cloud</div></section></div></div>
+    <footer class="poster-foot p5-foot">Microcontroller คือสมองกลขนาดเล็ก ที่ช่วยควบคุมและประมวลผลในระบบ IoT</footer>
+  </article>
+  <article class="slide poster poster6" aria-label="IoT ในชีวิตประจำวันและโรงงานอุตสาหกรรม">
+    <header class="p6-head"><h1>IoT ในชีวิตประจำวันและโรงงานอุตสาหกรรม<br><span style="color:#ffdb3d">(Smart IoT &amp; Smart Factory)</span></h1><p>“เชื่อมต่อทุกอย่าง ให้ฉลาดขึ้น<br>ทั้งในชีวิตประจำวัน และในโรงงาน”</p></header>
+    <div class="p6-main"><div class="p6-top"><section class="p6-life"><h2>⌂ IoT ในชีวิตประจำวัน</h2><p style="text-align:center;font-size:1cqw">IoT ช่วยให้ชีวิตสะดวกสบาย ปลอดภัย และประหยัดพลังงานมากขึ้น<br>ผ่านอุปกรณ์อัจฉริยะที่เชื่อมต่ออินเทอร์เน็ต</p><div class="p6-life-grid">
+      <article class="p6-life-card"><h3>Smart Home : บ้านอัจฉริยะ</h3><img src="assets/factory-home.png" alt="บ้านอัจฉริยะ"><ul><li>ควบคุมไฟ แอร์ผ่านมือถือ</li><li>ระบบรักษาความปลอดภัยด้วยกล้องอัจฉริยะ</li></ul></article>
+      <article class="p6-life-card"><h3>Wearable : อุปกรณ์สวมใส่</h3><img src="assets/factory-wearable.png" alt="อุปกรณ์สวมใส่อัจฉริยะ"><ul><li>วัดอัตราการเต้นหัวใจ</li><li>ติดตามสุขภาพแบบเรียลไทม์</li></ul></article>
+      <article class="p6-life-card"><h3>Smart Agriculture : เกษตรอัจฉริยะ</h3><img src="assets/factory-farm.png" alt="เกษตรอัจฉริยะ"><ul><li>ตรวจวัดความชื้นในดิน</li><li>ควบคุมการให้น้ำอัตโนมัติ</li></ul></article>
+      <article class="p6-life-card"><h3>Smart Transport : การขนส่งอัจฉริยะ</h3><img src="assets/factory-transport.png" alt="การขนส่งอัจฉริยะ"><ul><li>ติดตามรถแบบเรียลไทม์</li><li>วางแผนเส้นทางอย่างมีประสิทธิภาพ</li></ul></article>
+    </div></section><section class="p6-factory"><h2>▥ IoT ในโรงงานอุตสาหกรรม (Smart Factory)</h2><p style="text-align:center;font-size:1cqw">IoT ช่วยยกระดับการผลิตให้ฉลาดขึ้น ด้วยการเก็บข้อมูลจากเครื่องจักรและกระบวนการผลิต</p><div class="p6-factory-grid">
+      <article class="p6-factory-card"><h3>Machine Monitoring<br>ตรวจสอบเครื่องจักร</h3><img src="assets/factory-machine.png" alt="การติดตามเครื่องจักร"><p>รู้สถานะการทำงานและแจ้งเตือนเมื่อมีปัญหา</p></article>
+      <article class="p6-factory-card"><h3>Predictive Maintenance<br>บำรุงรักษาเชิงคาดการณ์</h3><img src="assets/factory-maintenance.png" alt="การบำรุงรักษา"><p>คาดการณ์ความเสียหายเพื่อซ่อมก่อนเกิดปัญหา</p></article>
+      <article class="p6-factory-card"><h3>Production Monitoring<br>ติดตามการผลิต</h3><img src="assets/factory-production.png" alt="สายการผลิต"><p>รับรู้ปริมาณการผลิตและประสิทธิภาพแบบเรียลไทม์</p></article>
+      <article class="p6-factory-card"><h3>Quality Control<br>ตรวจสอบคุณภาพ</h3><img src="assets/factory-quality.png" alt="การตรวจสอบคุณภาพ"><p>ตรวจพบสินค้าที่มีปัญหาได้ตั้งแต่ต้นทาง</p></article>
+      <article class="p6-factory-card"><h3>Energy Monitoring<br>ตรวจสอบพลังงาน</h3><img src="assets/factory-energy.png" alt="การตรวจสอบพลังงาน"><p>วิเคราะห์การใช้พลังงาน ลดค่าใช้จ่าย</p></article>
+      <article class="p6-factory-card"><h3>Safety Monitoring<br>ตรวจสอบความปลอดภัย</h3><img src="assets/factory-safety.png" alt="การตรวจความปลอดภัย"><p>แจ้งเตือนความเสี่ยงเพื่อป้องกันอุบัติเหตุ</p></article>
+    </div></section></div>
+      <div class="p6-bottom"><section class="p6-overview"><h2>⚙ ภาพรวมการทำงานของ IoT</h2><div class="p6-flow"><div><img src="assets/factory-chip.png" alt="อุปกรณ์"><b>อุปกรณ์เก็บข้อมูล</b><br>เช่น เครื่องจักร</div><span>➜</span><div><img src="assets/factory-wifi.png" alt="เครือข่าย"><b>เครือข่ายการสื่อสาร</b><br>เช่น Wi-Fi, 4G/5G</div><span>➜</span><div><img src="assets/factory-cloud.png" alt="ระบบคลาวด์"><b>ประมวลผลและวิเคราะห์</b><br>บน Cloud หรือเซิร์ฟเวอร์</div><span>➜</span><div><img src="assets/factory-dashboard.png" alt="แดชบอร์ด"><b>แสดงผลและควบคุม</b><br>ผ่าน Dashboard</div></div></section><section class="p6-benefits"><h2>⭐ ประโยชน์</h2><ul class="p6-list"><li>เพิ่มประสิทธิภาพการทำงาน</li><li>ลดต้นทุนและพลังงาน</li><li>ตรวจสอบข้อมูลได้เรียลไทม์</li><li>ยกระดับความปลอดภัย</li></ul></section><section class="p6-caution"><h2>⚠ ข้อควรระวัง</h2><ul class="p6-list"><li>ความปลอดภัยไซเบอร์</li><li>ความเสถียรของเครือข่าย</li></ul></section></div></div>
+    <footer class="poster-foot">“IoT ไม่ใช่แค่เทคโนโลยี แต่คือกุญแจสำคัญที่ช่วยให้โลกของเราฉลาดขึ้นในทุกมิติ”</footer>
+  </article>
+  <article class="slide poster poster7" aria-label="ตัวอย่างโปรเจกต์ IoT ด้วย Microcontroller">
+    <header class="p7-head"><div class="p7-circuit" aria-hidden="true"><svg viewBox="0 0 120 100"><rect x="33" y="25" width="54" height="50" rx="5"/><path d="M42 34h36v32H42zM12 30h21m-21 12h21m-21 12h21m-21 12h21m54-36h21M87 42h21M87 54h21M87 66h21M39 6v19m14-19v19m14-19v19m14-19v19M39 75v19m14-19v19m14-19v19m14-19v19"/></svg></div><div class="p7-title"><h1>ตัวอย่างโปรเจกต์ <em>IoT</em> ด้วย Microcontroller</h1><p>ระบบตรวจวัดอุณหภูมิและความชื้นผ่านอินเทอร์เน็ต<br><small>(IoT Temperature &amp; Humidity Monitor)</small></p></div><div class="p7-iot-cloud" aria-hidden="true"><span>⌁</span><b>IoT</b></div></header>
+    <div class="p7-main">
+      <div class="p7-top">
+        <section class="p7-project"><h2>1. ชื่อโปรเจกต์</h2><b class="p7-project-name">ระบบตรวจวัดอุณหภูมิและ<br>ความชื้นผ่านอินเทอร์เน็ต</b><p>โดยใช้ ESP32 และเซนเซอร์ DHT22<br>ส่งข้อมูลขึ้นแอป Blynk แบบเรียลไทม์</p><svg class="p7-project-icon" viewBox="0 0 100 100" aria-hidden="true"><path d="M34 15a14 14 0 0 1 28 0v38a24 24 0 1 1-28 0z"/><path d="M48 28v46m18-30h13m-13 13h10"/><path d="M72 23c0 10 12 17 12 28a12 12 0 0 1-24 0c0-11 12-18 12-28z"/></svg></section>
+        <section class="p7-parts"><h2>2. อุปกรณ์ที่ใช้</h2><article class="p7-part"><img src="assets/project-esp32.png" alt="ESP32 DevKit"><b>ESP32 DevKit</b><small>(บอร์ดควบคุม)</small></article><article class="p7-part"><img src="assets/project-dht22.png" alt="DHT22"><b>DHT22</b><small>(เซนเซอร์วัดอุณหภูมิ)</small></article><article class="p7-part"><img src="assets/project-breadboard.png" alt="Breadboard"><b>Breadboard</b><small>(แผงทดลอง)</small></article><article class="p7-part"><img src="assets/project-jumpers.png" alt="สาย Jumper"><b>สาย Jumper</b><small>(สายต่อวงจร)</small></article><article class="p7-part"><img src="assets/project-usb.png" alt="สาย USB"><b>สาย USB</b><small>(สำหรับจ่ายไฟ)</small></article><article class="p7-part"><img src="assets/project-laptop.png" alt="คอมพิวเตอร์"><b>คอมพิวเตอร์</b><small>(สำหรับเขียนโค้ด)</small></article><article class="p7-part"><img src="assets/project-blynk.png" alt="แอป Blynk"><b>แอป Blynk</b><small>(บนมือถือ)</small></article></section>
+      </div>
+      <div class="p7-mid">
+        <section class="p7-wiring"><h2>3. การต่อใช้งาน</h2><img src="assets/project-wiring.png" alt="แผนภาพการต่อสาย DHT22 กับ ESP32"><div class="p7-wire-note"><b>✓</b><span>หากใช้ DHT22 แบบ 4 ขาเปล่า<br>ควรมีตัวต้านทาน 10 kΩ ระหว่าง DATA กับ VCC</span></div></section>
+        <section class="p7-ide"><h2>4. โปรแกรมที่ใช้เขียนโค้ด</h2><div class="p7-ide-intro"><img src="assets/project-ide.png" alt="Arduino IDE"><div><b>Arduino IDE</b><strong>(Arduino Integrated<br>Development Environment)</strong><p>โปรแกรมสำหรับเขียน แก้ไข ตรวจสอบ และอัปโหลดโค้ดไปยังบอร์ด ESP32</p></div></div><b class="p7-steps-title">ขั้นตอนการใช้งาน</b><ol><li>ดาวน์โหลดและติดตั้ง Arduino IDE</li><li>เพิ่มบอร์ด ESP32 ใน Board Manager</li><li>ติดตั้งไลบรารีที่จำเป็น</li></ol></section>
+        <section class="p7-code"><h2>5. ตัวอย่างโค้ด (Arduino IDE)</h2><div class="p7-code-columns"><pre><code><span>#define BLYNK_TEMPLATE_ID</span> <i>"TMP123abc123"</i>
+#define BLYNK_TEMPLATE_NAME <i>"IoT Temp Monitor"</i>
+#define BLYNK_AUTH_TOKEN <i>"YourAuthToken"</i>
+#define BLYNK_PRINT Serial
+
+#include &lt;WiFi.h&gt;
+#include &lt;BlynkSimpleEsp32.h&gt;
+#include &lt;DHT.h&gt;
+
+char ssid[] = <i>"ชื่อWiFi"</i>;
+char pass[] = <i>"รหัสผ่านWiFi"</i>;
+#define DHTPIN 4
+#define DHTTYPE DHT22
+DHT dht(DHTPIN, DHTTYPE);</code></pre><pre><code>void sendSensor() {
+  float t = dht.readTemperature();
+  float h = dht.readHumidity();
+  if (isnan(t) || isnan(h)) return;
+  Blynk.virtualWrite(V0, t);
+  Blynk.virtualWrite(V1, h);
+}
+
+void setup() {
+  Serial.begin(115200);
+  dht.begin();
+  Blynk.begin(BLYNK_AUTH_TOKEN, ssid, pass);
+}
+
+void loop() {
+  Blynk.run();
+}</code></pre></div></section>
+      </div>
+      <div class="p7-bottom"><section class="p7-flow"><h2>6. หลักการทำงาน</h2><div class="p7-flowline"><div><img src="assets/project-output-sensor.png" alt="DHT22 วัดอุณหภูมิและความชื้น"><b>DHT22</b><br>วัดค่า</div><span>➜</span><div><img src="assets/project-output-board.png" alt="ESP32 ประมวลผล"><b>ESP32</b><br>ประมวลผล</div><span>➜</span><div><img src="assets/project-output-wifi.png" alt="ส่งข้อมูลผ่าน Wi-Fi"><b>ส่งข้อมูล</b><br>ผ่าน Wi-Fi</div><span>➜</span><div><img src="assets/project-output-blynk.png" alt="แสดงผลบนแอป Blynk"><b>แสดงผลบน</b><br>แอป Blynk</div></div></section><section class="p7-output"><h2>7. ผลลัพธ์ที่ได้</h2><img src="assets/project-dashboard.png" alt="แดชบอร์ดแสดงอุณหภูมิและความชื้น"><ul><li>ดูค่าแบบเรียลไทม์<br>ผ่านมือถือ</li><li>แจ้งเตือนหากค่าผิดปกติ</li><li>นำไปต่อยอดใช้งานจริงได้</li></ul></section><section class="p7-advice"><h2>8. ข้อดีและข้อควรระวัง</h2><div class="p7-advice-cols"><div class="p7-pros"><b>✓　ข้อดี</b><ul><li>ใช้งานง่าย</li><li>ตรวจสอบข้อมูลได้ไกล</li><li>ต่อยอดเป็น Smart Farm,<br>Smart Factory ได้</li></ul></div><div class="p7-cautions"><b>⚠　ข้อควรระวัง</b><ul><li>ต้องมีสัญญาณอินเทอร์เน็ต</li><li>ระวังความปลอดภัยของข้อมูล</li><li>ตรวจสอบความเสถียร<br>ของระบบ</li></ul></div></div></section></div>
+    </div>
+    <footer class="poster-foot p7-foot" aria-label="ลายวงจรตกแต่ง"></footer>
+  </article>
+  <nav class="deck-controls" aria-label="ควบคุมสไลด์"><button id="prev-slide" type="button">← ก่อนหน้า</button><span class="deck-count" id="slide-count">1 / 7</span><button id="next-slide" type="button">ถัดไป →</button><button class="pdf" type="button" onclick="window.print()">Export PDF</button></nav>
+  <script>
+  (()=>{const slides=[...document.querySelectorAll(".slide")],count=document.getElementById("slide-count"),prev=document.getElementById("prev-slide"),next=document.getElementById("next-slide");let current=0;function show(i){current=Math.max(0,Math.min(slides.length-1,i));slides.forEach((s,n)=>s.classList.toggle("active",n===current));count.textContent=(current+1)+" / "+slides.length;prev.disabled=current===0;next.disabled=current===slides.length-1}prev.addEventListener("click",()=>show(current-1));next.addEventListener("click",()=>show(current+1));document.addEventListener("keydown",e=>{if(e.key==="ArrowRight")show(current+1);if(e.key==="ArrowLeft")show(current-1)});show(0)})();
+  </script>
+</body>
+</html>
+
+
+
