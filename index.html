@@ -342,9 +342,9 @@ void loop() {
     </div>
     <footer class="poster-foot p7-foot" aria-label="ลายวงจรตกแต่ง"></footer>
   </article>
-  <nav class="deck-controls" aria-label="ควบคุมสไลด์"><button id="prev-slide" type="button">← ก่อนหน้า</button><span class="deck-count" id="slide-count">1 / 7</span><button id="next-slide" type="button">ถัดไป →</button><button class="pdf" type="button" onclick="window.print()">Export PDF</button></nav>
+  <nav class="deck-controls" aria-label="ควบคุมสไลด์"><button id="prev-slide" type="button">← ก่อนหน้า</button><span class="deck-count" id="slide-count">1 / 8</span><button id="next-slide" type="button">ถัดไป →</button><button class="pdf" type="button" onclick="window.print()">Export PDF</button></nav>
   <script>
-  (()=>{const slides=[...document.querySelectorAll(".slide")],count=document.getElementById("slide-count"),prev=document.getElementById("prev-slide"),next=document.getElementById("next-slide");let current=0;function show(i){current=Math.max(0,Math.min(slides.length-1,i));slides.forEach((s,n)=>s.classList.toggle("active",n===current));count.textContent=(current+1)+" / "+slides.length;prev.disabled=current===0;next.disabled=current===slides.length-1}prev.addEventListener("click",()=>show(current-1));next.addEventListener("click",()=>show(current+1));document.addEventListener("keydown",e=>{if(e.key==="ArrowRight")show(current+1);if(e.key==="ArrowLeft")show(current-1)});show(0)})();
+  (()=>{const slides=[...document.querySelectorAll(".slide")],count=document.getElementById("slide-count"),prev=document.getElementById("prev-slide"),next=document.getElementById("next-slide");let current=0;function show(i){current=Math.max(0,Math.min(slides.length-1,i));slides.forEach((s,n)=>{const active=n===current;s.classList.toggle("active",active);s.hidden=!active});count.textContent=(current+1)+" / "+slides.length;prev.disabled=current===0;next.disabled=current===slides.length-1}prev.addEventListener("click",()=>show(current-1));next.addEventListener("click",()=>show(current+1));document.addEventListener("keydown",e=>{if(e.key==="ArrowRight")show(current+1);if(e.key==="ArrowLeft")show(current-1)});show(0)})();
   </script>
 </body>
 </html>
